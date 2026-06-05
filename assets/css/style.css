@@ -951,6 +951,7 @@ ul, ol { list-style: none; }
    RESPONSIVE
    ============================== */
 @media (max-width: 1100px) {
+  .hero__scroll { display: none; }
   .cocktails-grid { grid-template-columns: 1fr 1fr; }
   .cocktails-grid .ccard:last-child { display: none; }
   .atm-grid { grid-template-columns: repeat(3, 1fr); }
@@ -969,7 +970,7 @@ ul, ol { list-style: none; }
   .nav__burger { display: flex; }
 
   /* Hero — hide scroll indicator, stack CTA buttons */
-  .hero__scroll { display: none; }
+  .hero__scroll { display: none; } /* also hidden at 1024px below */
   .hero__cta { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
   .hero__eyebrow::before { width: 1.5rem; }
 
@@ -999,11 +1000,9 @@ ul, ol { list-style: none; }
   .about-portrait img { object-position: center top; }
   .pillars-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 
-  /* Team cards — stack info vertically */
+  /* Team cards */
   .team-grid { grid-template-columns: 1fr; }
   .team-card__img { aspect-ratio: 3/4; max-height: 80vw; }
-  .team-card__info { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
-  .team-card__role { margin-top: 0; }
 
   /* Cocktail menu list */
   .mitem { grid-template-columns: 2.5rem 1fr; gap: 1.5rem; }
@@ -1067,12 +1066,17 @@ ul, ol { list-style: none; }
   filter: brightness(0.85);
 }
 .team-card:hover .team-card__img img { transform: scale(1.04); filter: brightness(1); }
-.team-card__info {
+.team-card__body {
   padding: 1.5rem 0 0;
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.team-card__role {
+  font-size: 0.72rem;
+  color: var(--gold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 .team-card__name {
   font-family: var(--serif);
@@ -1081,7 +1085,12 @@ ul, ol { list-style: none; }
   color: var(--white);
   line-height: 1.1;
 }
-.team-card__role { font-size: 0.75rem; color: var(--gold); white-space: nowrap; }
+.team-card__desc {
+  font-size: 0.95rem;
+  color: var(--white-70);
+  line-height: 1.8;
+  margin-top: 0.25rem;
+}
 
 /* ==============================
    PREPARATION / CRAFT SECTION
