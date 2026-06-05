@@ -963,44 +963,83 @@ ul, ol { list-style: none; }
 @media (max-width: 768px) {
   :root { --nav-h: 58px; --pad: 1.25rem; }
 
+  /* Nav */
   .nav__links, .nav__reserve-wrap { display: none; }
   .nav__brand { margin-right: auto; }
   .nav__burger { display: flex; }
 
-  .philosophy__grid { grid-template-columns: 1fr; }
-  .philosophy__img { aspect-ratio: 4/3; max-height: 60vw; }
+  /* Hero — hide scroll indicator, stack CTA buttons */
+  .hero__scroll { display: none; }
+  .hero__cta { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .hero__eyebrow::before { width: 1.5rem; }
 
+  /* Philosophy */
+  .philosophy__grid { grid-template-columns: 1fr; }
+  .philosophy__img { aspect-ratio: 16/9; max-height: 55vw; }
+  .philosophy__kicker::after { display: none; }
+
+  /* Cocktail cards */
   .cocktails-grid { grid-template-columns: 1fr; }
   .cocktails-grid .ccard:last-child { display: flex; }
 
-  .atm-grid { grid-template-columns: repeat(2, 1fr); }
-
+  /* Section header */
   .sec-head { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
 
+  /* Atmosphere grid */
+  .atm-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Footer */
   .footer__grid { grid-template-columns: 1fr; gap: 2rem; }
   .footer__cols { grid-template-columns: 1fr 1fr; }
   .footer__bottom { flex-direction: column; align-items: flex-start; }
 
+  /* About page — keep portrait orientation for person photos */
   .about-grid { grid-template-columns: 1fr; }
-  .about-portrait { aspect-ratio: 4/3; }
+  .about-portrait { aspect-ratio: 3/4; max-height: 80vw; }
+  .about-portrait img { object-position: center top; }
   .pillars-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 
+  /* Team cards — stack info vertically */
+  .team-grid { grid-template-columns: 1fr; }
+  .team-card__img { aspect-ratio: 3/4; max-height: 80vw; }
+  .team-card__info { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+  .team-card__role { margin-top: 0; }
+
+  /* Cocktail menu list */
   .mitem { grid-template-columns: 2.5rem 1fr; gap: 1.5rem; }
   .mitem__thumb { display: none; }
 
+  /* Gallery */
   .masonry { columns: 2; }
   .lb-prev { left: 0.5rem; }
   .lb-next { right: 0.5rem; }
+  .gallery-cat__count { display: none; }
 
+  /* Page hero inner pages */
   .page-hero .wrap { grid-template-columns: 1fr; }
   .page-hero__num { display: none; }
+  .page-hero__title { font-size: clamp(3rem, 12vw, 5rem); }
 }
 
 @media (max-width: 480px) {
-  .hero__title { font-size: clamp(3.5rem, 22vw, 6rem); }
+  /* Hero title slightly smaller on very small phones */
+  .hero__title { font-size: clamp(3.2rem, 20vw, 5.5rem); }
+
+  /* Atmosphere / instagram grid */
   .atm-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Gallery masonry — single column */
   .masonry { columns: 1; }
+
+  /* Footer */
   .footer__cols { grid-template-columns: 1fr; }
+
+  /* Cocktail cards — reduce inner padding */
+  .ccard__body { padding: 1.25rem; }
+
+  /* Cocktail menu items */
+  .mitem__name { font-size: 1.5rem; }
+  .mitem { padding: 1.75rem 0; }
 }
 
 
